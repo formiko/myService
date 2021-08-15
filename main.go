@@ -10,5 +10,5 @@ func main() {
 	{
 		v1.GET("", controller.StampToTime)
 	}
-	router.Run(":8000")
+	router.Run(":80")
 }
