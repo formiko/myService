@@ -1,7 +1,23 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"log"
+	"os"
+	"time"
+)
 import "myService/controller"
+
+func init() {
+	logFile, err := os.OpenFile("log/myService_" + time.Now().Format("20060102150405") + ".log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+	if err != nil {
+		fmt.Println("open log file failed, err:", err)
+		return
+	}
+	log.SetOutput(logFile)
+	log.SetFlags(log.Llongfile | log.Lmicroseconds | log.Ldate)
+}
 
 func main() {
 	router := gin.Default()
