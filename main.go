@@ -26,5 +26,6 @@ func main() {
 	{
 		v1.GET("", controller.StampToTime)
 	}
+	router.StaticFS("/file", gin.Dir("file", true))
 	router.Run(":80")
 }
