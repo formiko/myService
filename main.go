@@ -26,6 +26,9 @@ func main() {
 	{
 		v1.GET("", controller.StampToTime)
 	}
+
+	os.Mkdir("./file", os.ModePerm)
 	router.StaticFS("/file", gin.Dir("file", true))
+
 	router.Run(":80")
 }
