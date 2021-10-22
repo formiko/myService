@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
-	"myService/service"
+	"github.com/formiko/myService/service"
 	"regexp"
 	"strconv"
 )
